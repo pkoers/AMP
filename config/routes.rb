@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'emails/new'
   get 'profiles/me'
   devise_for :users
   root to: "pages#home"

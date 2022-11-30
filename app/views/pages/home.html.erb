@@ -1,2 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div>
+  <%= image_tag "Platform Ground  Logo.png"%>
+  <p> Welcome <%= @user.email %> </p>
+  <ul>
+    <% @emails.each do |email| %>
+    <li>
+      <%= email.first_name %>
+    </li>
+    <% end %>
+  </ul>
+</div>

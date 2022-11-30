@@ -7,12 +7,17 @@ class PagesController < ApplicationController
   # end
 
   def home
+    # @emails = Email.find(@user.id)
+    @emails = Email.all
+  end
+
+  def new
+    @email = Email.new
   end
 
   private
 
   def set_user
-    @user = User.find_by(email: params[:id])
+    @user = User.find_by(username: params[:id])
   end
-
 end
