@@ -1,6 +1,6 @@
 # fly.toml file generated for shy-voice-4746 on 2022-11-29T17:00:38+01:00
 
-app = "shy-voice-4746"
+app = "summer-brook-2126"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
