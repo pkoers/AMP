@@ -15,7 +15,21 @@ class PagesController < ApplicationController
     @email = Email.new
   end
 
+  def create
+    @email = Email.new(email_params)
+    @email.user_id = current_user
+    if @email.save
+      redirect_to root_path, notice: 'The email adress was successfully added'
+    else
+      render :new, notice: 'Something went wrong'
+    end
+  end
+
   private
+
+  def email_params
+    params.require(:email).permit(:first_name, :last_name, :to, :from, :email_adress)
+  end
 
   def set_user
     @user = User.find_by(username: params[:id])

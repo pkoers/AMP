@@ -3,5 +3,7 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :email_adress %>
+  <%= f.input :to %>
+  <%= f.input :from, :input_html => {:checked => true}%>
   <%= f.submit "Submit Email", class: "btn btn-primary" %>
 <% end %>
