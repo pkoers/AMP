@@ -32,6 +32,7 @@ class PagesController < ApplicationController
   end
 
   def set_user
-    @user = User.find_by(username: params[:id])
+    #@user = User.find_by(username: params[:id])
+    @user = current_user
   end
 end
