@@ -1,11 +1,28 @@
-<div>
-  <%= image_tag "Platform Ground  Logo.png"%>
-  <p> Welcome <%= @user.email %> </p>
+<div class="container margin-profile">
+  <p><h1> <%= image_tag "Platform Ground  Logo.png"%>
+  Welcome <%= @user.email %></h1></p>
+  Email address added by you for LDM from BON:
+  <br><br>
   <ul>
     <% @emails.each do |email| %>
     <li>
-      <%= email.first_name %> <%= email.last_name%>
+      <%= email.first_name %> <%= email.last_name%> - <%= email.email_adress%>
     </li>
     <% end %>
   </ul>
+  <button type="button" class="btn btn-info text-decoration-none">
+    <%= link_to "Add Addresses", new_email_path(@email) %>
+  </button>
+  <button type="button" class="btn btn-info">Edit Addresses
+  </button>
+
+  <div class="mt-4 mb-3">
+    <div class="row">
+      <br>
+      <p class="text-center"><br><h1>Document Distrubtion Flow</h1><br></p>
+      <%= image_tag "Screenshot 2022-12-01 at 15.55.43.png"%>
+      <p class="text-center"><br><h1>Data Integrity Flow</h1><br></p>
+      <%= image_tag "image.png"%>
+    </div>
+  </div>
 </div>
