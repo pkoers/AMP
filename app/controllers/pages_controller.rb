@@ -25,6 +25,13 @@ class PagesController < ApplicationController
     end
   end
 
+  def forward_email
+    @emails = Email.all
+    @emails.each do |user|
+      UserMailer.forward(user).deliver_now
+    end
+  end
+
   private
 
   def email_params
